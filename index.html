@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>탈취제 친환경 점수 분석기</title>
+  <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fuse.js for fuzzy matching -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">🌿 탈취제 친환경성 분석기</h1>
+    <select id="langSelect" onchange="changeLanguage()">
+      <option value="ko">한국어</option>
+      <option value="en">English</option>
+      <option value="ja">日本語</option>
+    </select>
+    <textarea
+      id="ingredientInput"
+      placeholder="성분을 입력하세요. 예: Ethanol, Fragrance, Glycerin..."
+    ></textarea>
+    <button onclick="analyzeIngredients()" id="analyzeBtn">분석하기</button>
+
+    <div id="result" class="score-result"></div>
+    <div class="eco-bar">
+      <div id="ecoBarFill" class="eco-bar-fill"></div>
+    </div>
+
+    <p style="text-align:center; font-size: 0.9rem; margin-top: 1rem; color: #666;">
+      🔍 성분 정보 출처:
+      <a href="https://www.ewg.org/skindeep/" target="_blank" rel="noopener noreferrer">EWG Skin Deep</a>,
+      <a href="https://incidecoder.com" target="_blank" rel="noopener noreferrer">INCIDecoder</a>,
+      <a href="https://pubchem.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer">PubChem</a>
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
